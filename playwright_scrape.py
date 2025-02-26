@@ -26,5 +26,7 @@ async def fetch_page_text(url):
             tag.decompose()
         # 提取純文字（以空白分隔）
         text = soup.get_text(separator=" ", strip=True)
+        # 將所有英文轉成小寫
+        text = text.lower()
         return text
 
